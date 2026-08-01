@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>空き状況・ご予約 | エアコンクリーニング達人</title>
+<meta name="description" content="8:00〜20:00の3時間枠から空き状況を確認してその場でご予約いただけます。">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="header" id="header">
+  <div class="container header__inner">
+    <a href="index.html" class="logo">
+      <span class="logo__icon">❄️</span>
+      <span class="logo__text">エアコン<br>クリーニング達人</span>
+    </a>
+    <nav class="nav" id="nav">
+      <a href="index.html">ホーム</a>
+      <a href="price.html">料金</a>
+      <a href="flow.html">流れ</a>
+      <a href="voice.html">お客様の声</a>
+      <a href="faq.html">よくある質問</a>
+      <a href="booking.html" class="is-current">予約</a>
+      <a href="contact.html">お問い合わせ</a>
+    </nav>
+    <div class="header__cta">
+      <a href="tel:0120123456" class="header__tel">
+        <span class="header__tel-label">電話で相談・予約</span>
+        <span class="header__tel-number">0120-123-456</span>
+      </a>
+      <a href="booking.html" class="btn btn--primary">WEBで予約する</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="メニューを開く">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+  <!-- 空き状況・予約 -->
+  <section class="booking" id="booking">
+    <div class="container">
+      <h2 class="section-title">空き状況を見て予約する</h2>
+      <p class="section-sub">8:00〜20:00を3時間ごとの枠でご案内しています。ご希望の日付と枠を選ぶとその場でご予約いただけます(1枠につき1件まで)。</p>
+
+      <div class="booking__dates" id="bookingDates"></div>
+      <div class="booking__slots" id="bookingSlots"></div>
+
+      <form class="contact__form booking__form" id="bookingForm" hidden>
+        <p class="booking__selected" id="bookingSelectedLabel"></p>
+        <div class="contact__row">
+          <label>
+            お名前<span class="req">必須</span>
+            <input type="text" id="bookingName" placeholder="山田 太郎" required>
+          </label>
+          <label>
+            電話番号<span class="req">必須</span>
+            <input type="tel" id="bookingTel" placeholder="090-0000-0000" required>
+          </label>
+        </div>
+        <label>
+          ご希望プラン
+          <select id="bookingPlan">
+            <option>壁掛けエアコン</option>
+            <option>お掃除機能付き</option>
+            <option>室外機セット</option>
+            <option>その他・相談したい</option>
+          </select>
+        </label>
+        <div class="booking__form-actions">
+          <button type="button" class="btn btn--outline" id="bookingCancel">選び直す</button>
+          <button type="submit" class="btn btn--primary">この日時で予約を確定する</button>
+        </div>
+      </form>
+
+      <p class="booking__success" id="bookingSuccess" role="status" hidden></p>
+      <p class="booking__note">※本デモの予約状況はこの端末のブラウザ内に保存されます。他の端末とは共有されません。</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__brand">
+      <p class="logo__text">エアコンクリーニング達人</p>
+      <p>〒000-0000 東京都〇〇区〇〇1-2-3</p>
+      <p>電話番号: 0120-123-456 / 受付時間 9:00〜19:00(年中無休)</p>
+    </div>
+    <nav class="footer__nav">
+      <a href="index.html">ホーム</a>
+      <a href="price.html">料金</a>
+      <a href="flow.html">流れ</a>
+      <a href="voice.html">お客様の声</a>
+      <a href="faq.html">よくある質問</a>
+      <a href="booking.html" class="is-current">予約</a>
+      <a href="contact.html">お問い合わせ</a>
+    </nav>
+  </div>
+  <p class="footer__copyright">&copy; 2026 エアコンクリーニング達人. All Rights Reserved.</p>
+</footer>
+
+<div class="fixed-cta">
+  <a href="tel:0120123456" class="fixed-cta__item fixed-cta__item--tel">📞 電話で予約</a>
+  <a href="booking.html" class="fixed-cta__item fixed-cta__item--form">WEBで予約</a>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>

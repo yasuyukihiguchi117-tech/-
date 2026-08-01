@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>お問い合わせ | エアコンクリーニング達人</title>
+<meta name="description" content="エアコンクリーニングに関するご質問・お見積りのご相談はこちらのフォームまたはお電話から承ります。">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="header" id="header">
+  <div class="container header__inner">
+    <a href="index.html" class="logo">
+      <span class="logo__icon">❄️</span>
+      <span class="logo__text">エアコン<br>クリーニング達人</span>
+    </a>
+    <nav class="nav" id="nav">
+      <a href="index.html">ホーム</a>
+      <a href="price.html">料金</a>
+      <a href="flow.html">流れ</a>
+      <a href="voice.html">お客様の声</a>
+      <a href="faq.html">よくある質問</a>
+      <a href="booking.html">予約</a>
+      <a href="contact.html" class="is-current">お問い合わせ</a>
+    </nav>
+    <div class="header__cta">
+      <a href="tel:0120123456" class="header__tel">
+        <span class="header__tel-label">電話で相談・予約</span>
+        <span class="header__tel-number">0120-123-456</span>
+      </a>
+      <a href="booking.html" class="btn btn--primary">WEBで予約する</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="メニューを開く">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+  <!-- お問い合わせ -->
+  <section class="contact" id="contact">
+    <div class="container contact__inner">
+      <h2 class="section-title section-title--light">無料お見積り・ご予約はこちら</h2>
+      <p class="contact__lead">お電話、またはフォームより24時間受付中です。担当より折り返しご連絡いたします。</p>
+      <div class="contact__tel">
+        <a href="tel:0120123456">📞 0120-123-456</a>
+        <span>受付時間 9:00〜19:00(年中無休)</span>
+      </div>
+      <form class="contact__form" action="mailto:info@example.com" method="post" enctype="text/plain">
+        <div class="contact__row">
+          <label>
+            お名前<span class="req">必須</span>
+            <input type="text" name="name" placeholder="山田 太郎" required>
+          </label>
+          <label>
+            電話番号<span class="req">必須</span>
+            <input type="tel" name="tel" placeholder="090-0000-0000" required>
+          </label>
+        </div>
+        <div class="contact__row">
+          <label>
+            メールアドレス
+            <input type="email" name="email" placeholder="example@mail.com">
+          </label>
+          <label>
+            ご希望プラン
+            <select name="plan">
+              <option>壁掛けエアコン</option>
+              <option>お掃除機能付き</option>
+              <option>室外機セット</option>
+              <option>その他・相談したい</option>
+            </select>
+          </label>
+        </div>
+        <label class="contact__message">
+          お問い合わせ内容
+          <textarea name="message" rows="4" placeholder="台数やご希望日時などご記入ください"></textarea>
+        </label>
+        <button type="submit" class="btn btn--primary btn--lg contact__submit">この内容で送信する</button>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__brand">
+      <p class="logo__text">エアコンクリーニング達人</p>
+      <p>〒000-0000 東京都〇〇区〇〇1-2-3</p>
+      <p>電話番号: 0120-123-456 / 受付時間 9:00〜19:00(年中無休)</p>
+    </div>
+    <nav class="footer__nav">
+      <a href="index.html">ホーム</a>
+      <a href="price.html">料金</a>
+      <a href="flow.html">流れ</a>
+      <a href="voice.html">お客様の声</a>
+      <a href="faq.html">よくある質問</a>
+      <a href="booking.html">予約</a>
+      <a href="contact.html" class="is-current">お問い合わせ</a>
+    </nav>
+  </div>
+  <p class="footer__copyright">&copy; 2026 エアコンクリーニング達人. All Rights Reserved.</p>
+</footer>
+
+<div class="fixed-cta">
+  <a href="tel:0120123456" class="fixed-cta__item fixed-cta__item--tel">📞 電話で予約</a>
+  <a href="booking.html" class="fixed-cta__item fixed-cta__item--form">WEBで予約</a>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
