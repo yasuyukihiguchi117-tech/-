@@ -343,6 +343,24 @@ section { padding: 80px 0; }
 .giftinfo__card h3 { margin: 0 0 8px; font-size: 1.05rem; }
 .giftinfo__card p { margin: 0; color: var(--color-text-light); font-size: 0.9rem; }
 
+/* ---------- Scene ---------- */
+.scene__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+.scene__card {
+  background: #fff;
+  border: 1px solid #e6eef1;
+  border-radius: var(--radius);
+  padding: 32px;
+  text-align: center;
+}
+.scene__art { width: 160px; height: 160px; margin: 0 auto 20px; }
+.scene__art svg { width: 100%; height: 100%; display: block; }
+.scene__card h3 { margin: 0 0 8px; font-size: 1.1rem; }
+.scene__card p { margin: 0; color: var(--color-text-light); font-size: 0.92rem; }
+
 /* ---------- Reason ---------- */
 .reason__grid {
   display: grid;
@@ -861,6 +879,8 @@ section { padding: 80px 0; }
   .hero__inner { grid-template-columns: 1fr; }
   .occasion__grid { grid-template-columns: repeat(2, 1fr); }
   .reason__grid { grid-template-columns: repeat(2, 1fr); }
+  .scene__grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .scene__art { width: 130px; height: 130px; }
   .price__grid { grid-template-columns: 1fr; }
   .price__card--recommend { transform: none; order: -1; }
   .flow__list { grid-template-columns: repeat(2, 1fr); }
@@ -880,6 +900,7 @@ section { padding: 80px 0; }
   section { padding: 56px 0; }
   .occasion__grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
   .reason__grid { grid-template-columns: 1fr; }
+  .scene__grid { grid-template-columns: 1fr; }
   .giftinfo__grid { grid-template-columns: 1fr; }
   .flow__list { grid-template-columns: 1fr; }
   .quicklinks__grid { grid-template-columns: 1fr; }
