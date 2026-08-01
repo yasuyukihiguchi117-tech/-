@@ -7,14 +7,26 @@ const MODES = [
   { id: "サービス誘導", label: "サービス誘導", desc: "自然に紹介したいサービスへ橋渡し" },
 ];
 
-async function callClaude(prompt, maxTokens = 1000) {
-  const res = await fetch("/api/generate", {
+const CLAUDE_MODEL = "claude-sonnet-5";
+
+async function callClaude(apiKey, prompt, maxTokens = 1000) {
+  const res = await fetch("https://api.anthropic.com/v1/messages", {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ prompt, max_tokens: maxTokens }),
+    headers: {
+      "Content-Type": "application/json",
+      "x-api-key": apiKey,
+      "anthropic-version": "2023-06-01",
+      "anthropic-dangerous-direct-browser-access": "true",
+    },
+    body: JSON.stringify({
+      model: CLAUDE_MODEL,
+      max_tokens: maxTokens,
+      messages: [{ role: "user", content: prompt }],
+    }),
   });
   if (!res.ok) {
-    throw new Error(`API request failed with status ${res.status}`);
+    const errBody = await res.json().catch(() => ({}));
+    throw new Error(errBody.error?.message || `API request failed with status ${res.status}`);
   }
   const data = await res.json();
   const text = (data.content || [])
@@ -28,7 +40,7 @@ function stripFences(text) {
   return text.replace(/```json|```/g, "").trim();
 }
 
-export default function PaidNoteGenerator() {
+export default function PaidNoteGenerator({ apiKey, onResetApiKey }) {
   const [persona, setPersona] = useState("");
   const [theme, setTheme] = useState("");
   const [mode, setMode] = useState("体験談");
@@ -86,14 +98,14 @@ ${ctaNote}
   "tags": ["タグ1", "タグ2", "タグ3", "タグ4", "タグ5"]
 }`;
 
-      const raw = await callClaude(prompt, 1000);
+      const raw = await callClaude(apiKey, prompt, 1000);
       const parsed = JSON.parse(stripFences(raw));
       setTitles(parsed.titles || []);
       setSelectedTitle((parsed.titles && parsed.titles[0]) || "");
       setFreePart(parsed.free_part || "");
       setTags(parsed.tags || []);
     } catch (e) {
-      setError("生成に失敗しました。もう一度お試しください。");
+      setError(`生成に失敗しました: ${e.message}`);
     } finally {
       setLoadingMain(false);
     }
@@ -120,11 +132,11 @@ ${freePart}
 
 この続きとして、有料部分(700〜900字程度)を書いてください。無料部分の流れを受けて、具体的なノウハウ・体験の核心・読者が本当に知りたい部分を、出し惜しみせず書いてください。最後に軽くまとめの一言を添えてください。`;
 
-      const raw = await callClaude(prompt, 1000);
+      const raw = await callClaude(apiKey, prompt, 1000);
       setPaidPart(raw.trim());
       setRevealed(true);
     } catch (e) {
-      setError("有料部分の生成に失敗しました。もう一度お試しください。");
+      setError(`有料部分の生成に失敗しました: ${e.message}`);
     } finally {
       setLoadingPaid(false);
     }
@@ -158,6 +170,11 @@ ${freePart}
             <div style={styles.recordTab}>下書き設定</div>
             <h1 style={styles.panelTitle}>有料note ジェネレーター</h1>
             <p style={styles.panelSub}>立場とテーマを渡すと、有料noteの下書き一式を作ります</p>
+            {onResetApiKey && (
+              <button type="button" style={styles.apiKeyResetLink} onClick={onResetApiKey}>
+                APIキーを変更する
+              </button>
+            )}
           </div>
 
           <label style={styles.label}>書き手の立場・プロフィール(任意)</label>
@@ -422,6 +439,17 @@ const styles = {
     color: "#F5F1E6",
   },
   panelSub: { fontSize: 12.5, color: "#B7BCB0", margin: 0, lineHeight: 1.6 },
+  apiKeyResetLink: {
+    background: "transparent",
+    border: "none",
+    color: "#C9A227",
+    fontSize: 11,
+    fontFamily: "inherit",
+    padding: 0,
+    marginTop: 8,
+    textDecoration: "underline",
+    cursor: "pointer",
+  },
   label: {
     fontSize: 11.5,
     color: "#9FB0A8",
