@@ -7,37 +7,38 @@
 @page{size:A4;margin:0}
 *{box-sizing:border-box}
 html,body{margin:0}
-body{width:210mm;height:297mm;font-family:"Noto Sans CJK JP","Noto Sans JP","Hiragino Sans",sans-serif;color:#1f2a33;background:#fff;overflow:hidden}
-.top{background:#1d6fa5;color:#fff;padding:12mm 14mm 9mm;text-align:center}
-.top .shop{font-size:15pt;letter-spacing:.15em}
-.top h1{margin:3mm 0 2mm;font-size:30pt;line-height:1.3}
-.top p{margin:0;font-size:12.5pt}
-.main{padding:8mm 14mm 0}
-.price-box{display:flex;align-items:center;justify-content:center;gap:6mm;background:#fff7d6;border:1.2mm solid #f2b705;border-radius:5mm;padding:5mm}
+body{position:relative;width:210mm;height:297mm;font-family:"Noto Sans CJK JP","Noto Sans JP","Hiragino Sans",sans-serif;color:#1f2a33;background:#fff;overflow:hidden}
+.top{background:#1d6fa5;color:#fff;padding:9mm 14mm 7mm;text-align:center}
+.top .shop{font-size:13pt;letter-spacing:.15em}
+.top h1{margin:2mm 0 1.5mm;font-size:28pt;line-height:1.3}
+.top p{margin:0;font-size:12pt}
+.main{padding:6mm 14mm 0}
+.price-box{display:flex;align-items:center;justify-content:center;gap:6mm;background:#fff7d6;border:1.2mm solid #f2b705;border-radius:5mm;padding:3.5mm}
 .price-box .label{font-size:14pt;font-weight:700}
-.price-box .num{font-size:44pt;font-weight:900;color:#d4380d;line-height:1}
+.price-box .num{font-size:40pt;font-weight:900;color:#d4380d;line-height:1}
 .price-box .num small{font-size:15pt;color:#1f2a33}
 .price-box .tax{font-size:10.5pt}
-h2{font-size:14.5pt;margin:7mm 0 3mm;padding-left:3mm;border-left:2.5mm solid #1d6fa5}
+h2{font-size:14pt;margin:6mm 0 3mm;padding-left:3mm;border-left:2.5mm solid #1d6fa5}
+.ba{display:grid;grid-template-columns:repeat(3,1fr);gap:4mm}
+.pair{text-align:center}
+.pair figure{margin:0;position:relative}
+.pair img{display:block;width:100%;height:33mm;object-fit:cover;border-radius:2mm}
+.tag{position:absolute;left:0;top:0;color:#fff;font-size:10pt;font-weight:700;padding:.8mm 3mm;border-radius:2mm 0 2mm 0}
+.tag.b{background:#d4380d}.tag.a{background:#1d6fa5}
+.arrow{color:#1d6fa5;font-size:13pt;line-height:1;margin:1.2mm 0}
+.cap{font-size:9pt;color:#55626d;margin-top:2.5mm}
 .points{display:grid;grid-template-columns:1fr 1fr 1fr;gap:3mm}
-.points div{background:#eaf4fb;border-radius:3mm;padding:3.5mm 3mm;text-align:center;font-size:10.5pt;line-height:1.45}
-.points b{display:block;font-size:12.5pt;color:#1d6fa5;margin-bottom:1mm}
-table{width:100%;border-collapse:collapse;font-size:11pt}
-th,td{border:.3mm solid #b8c7d3;padding:2mm 2.5mm;text-align:center}
-th{background:#1d6fa5;color:#fff}
-td.off{color:#d4380d;font-weight:700}
-.opt{display:flex;gap:4mm;margin-top:3mm;font-size:10.5pt}
-.opt div{flex:1;border:.3mm solid #b8c7d3;border-radius:3mm;padding:2.5mm 3mm}
-.opt b{color:#d4380d}
+.points div{background:#eaf4fb;border-radius:3mm;padding:3mm;text-align:center;font-size:10pt;line-height:1.45}
+.points b{display:block;font-size:12pt;color:#1d6fa5;margin-bottom:.5mm}
 .flow{display:flex;gap:2mm;font-size:9.5pt;text-align:center}
-.flow div{flex:1;background:#f3f6f8;border-radius:2.5mm;padding:2.5mm 1.5mm}
-.flow i{display:block;font-style:normal;font-weight:700;color:#1d6fa5;font-size:12pt}
-.bottom{position:absolute;left:0;right:0;bottom:0;background:#f3f6f8;padding:6mm 14mm;display:flex;gap:8mm;align-items:center}
-.bottom .qr{width:30mm;height:30mm;background:#fff;padding:1mm}
+.flow div{flex:1;background:#f3f6f8;border-radius:2.5mm;padding:2mm 1mm}
+.flow i{display:block;font-style:normal;font-weight:700;color:#1d6fa5;font-size:11.5pt}
+.note{font-size:9.5pt;line-height:1.6;color:#55626d;margin-top:3mm}
+.bottom{position:absolute;left:0;right:0;bottom:0;background:#f3f6f8;padding:5mm 14mm;display:flex;gap:8mm;align-items:center}
+.bottom .qr{width:28mm;height:28mm;background:#fff;padding:1mm}
 .bottom .qr img{width:100%;height:100%}
 .bottom .info{font-size:10.5pt;line-height:1.7}
-.bottom .info .cta{font-size:15pt;font-weight:700;color:#1d6fa5}
-.note{font-size:10pt;line-height:1.7;color:#55626d;margin-top:4mm}
+.bottom .info .cta{font-size:14pt;font-weight:700;color:#1d6fa5}
 </style>
 </head>
 <body>
@@ -50,8 +51,30 @@ td.off{color:#d4380d;font-weight:700}
 <div class="main">
   <div class="price-box">
     <div class="label">壁掛型エアコン<br>1台</div>
-    <div class="num">10,140<small>円</small></div>
+    <div class="num">8,800<small>円</small></div>
     <div class="tax">(税込)<br>複数台割引あり</div>
+  </div>
+
+  <h2>ビフォーアフター</h2>
+  <div class="ba">
+    <div class="pair">
+      <figure><img src="photos/before1.jpg" alt="施工前"><span class="tag b">施工前</span></figure>
+      <div class="arrow">▼</div>
+      <figure><img src="photos/after1.jpg" alt="施工後"><span class="tag a">施工後</span></figure>
+      <div class="cap">風の通り道</div>
+    </div>
+    <div class="pair">
+      <figure><img src="photos/before2.jpg" alt="施工前"><span class="tag b">施工前</span></figure>
+      <div class="arrow">▼</div>
+      <figure><img src="photos/after2.jpg" alt="施工後"><span class="tag a">施工後</span></figure>
+      <div class="cap">吹き出し口</div>
+    </div>
+    <div class="pair">
+      <figure><img src="photos/before3.jpg" alt="施工前"><span class="tag b">施工前</span></figure>
+      <div class="arrow">▼</div>
+      <figure><img src="photos/after3.jpg" alt="施工後"><span class="tag a">施工後</span></figure>
+      <div class="cap">内部のカビ汚れ</div>
+    </div>
   </div>
 
   <h2>選ばれる理由</h2>
@@ -59,18 +82,6 @@ td.off{color:#d4380d;font-weight:700}
     <div><b>100%自社施工</b>外注なし。店長が責任をもって作業します</div>
     <div><b>追加料金なし</b>汚れによる追加料金は基本ありません</div>
     <div><b>出張費・駐車代無料</b>対応地域なら出張費は無料です</div>
-  </div>
-
-  <h2>料金表(税込)</h2>
-  <table>
-    <tr><th>台数</th><th>1台</th><th>2台</th><th>3台</th><th>4台</th><th>5台</th></tr>
-    <tr><td>通常タイプ</td><td>10,140円</td><td>16,900円</td><td>27,300円</td><td>36,400円</td><td>45,500円</td></tr>
-    <tr><td>割引額</td><td>-</td><td class="off">3,380円OFF</td><td class="off">3,120円OFF</td><td class="off">4,160円OFF</td><td class="off">5,200円OFF</td></tr>
-    <tr><td>お掃除機能付き</td><td>20,800円</td><td>41,600円</td><td>62,400円</td><td>83,200円</td><td>104,000円</td></tr>
-  </table>
-  <div class="opt">
-    <div>室外機クリーニング <b>3,900円</b><br>電気代の節約におすすめ</div>
-    <div>防カビ抗菌コート <b>3,900円</b><br>カビ対策に</div>
   </div>
 
   <h2>作業の流れ</h2>
@@ -83,7 +94,7 @@ td.off{color:#d4380d;font-weight:700}
   </div>
   <p class="note">施工後3日以内のご連絡で再施工します。小さなお子さま・ペットのいるご家庭も安心です。<br>
   対応地域:東京都(杉並区・渋谷区・世田谷区・大田区・目黒区・品川区・港区ほか)・関東近県<br>
-  ※ご注文は3日以上先の日程で。キャンセルは訪問日の2〜7日前から料金が発生します。詳しくはサイトをご覧ください。</p>
+  ※お掃除機能付き・複数台・オプションの料金は、お気軽にお問い合わせください。</p>
 </div>
 
 <div class="bottom">
